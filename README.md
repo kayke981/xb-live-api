@@ -5,6 +5,9 @@ Easy and simple API for xbox.
 
 go to https://xbl.io/ and log in to some account on Xbox, then press menu, profile and go down a little, and api key will appear, and press create, then go up a little and go to apps then click new app, put anything, in Public Key put anything, like: 1772683 
 
+# Support server
+
+https://discord.gg/jyfzwvadBy
 
 # How it works? 
 
