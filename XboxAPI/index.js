@@ -3,7 +3,7 @@ const party = require('../httpREQUEST/party/party.js');
 const precense = require('../httpREQUEST/precense/precense/precense.js');
 const recentplayers = require('../httpREQUEST/rcp/recentplayers/recentplayers.js');
 const account = require('../httpREQUEST/account/account/acc.js');
-const ach = require('../httpREQUEST/achieviments/achiviementsments/ach.js');
+const ach = require('../httpREQUEST/achieviments/achiviements/ach.js');
 const conversations = require('../httpREQUEST/conversations/con.js');
 class XboxAPI {
 	constructor(options = {}) {

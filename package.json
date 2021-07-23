@@ -1,6 +1,6 @@
 {
   "name": "xb-live-api",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Easy and simple API for xbox.",
   "main": "index.js",
   "scripts": {
