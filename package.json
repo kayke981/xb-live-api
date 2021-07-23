@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kayke981/Xbox-Live-API.git"
+    "url": "git+https://github.com/kayke981/xb-live-api.git"
   },
   "keywords": [
     "xbox-live-api"
@@ -16,9 +16,9 @@
   "author": "kayake.",
   "license": "apache 2.0",
   "bugs": {
-    "url": "https://github.com/kayke981/Xbox-Live-API/issues"
+    "url": "https://github.com/kayke981/xb-live-api/issues"
   },
-  "homepage": "https://github.com/kayke981/Xbox-Live-API#readme",
+  "homepage": "https://github.com/kayke981/xb-live-api#readme",
   "dependencies": {
     "node-fetch": "^2.6.1"
   }
