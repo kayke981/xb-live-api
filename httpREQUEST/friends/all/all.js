@@ -1,10 +1,9 @@
 const n = require('node-fetch')
 
-	async function add(xuid) {
+	async function all() {
 		return new Promise(async (res, rej) => {
-		if (!xuid) throw new TypeError('Provide a xuid')
 		
-		return await n(`https://xbl.io/api/v2/friends/add/${xuid}`, {
+		return await n(`https://xbl.io/api/v2/friends/`, {
 			"headers": {
 				'X-Authorization': String(process.env.api_key),
 				'X-Contract': String(process.env.app_key),
@@ -16,4 +15,4 @@ const n = require('node-fetch')
 })
 	}
 
-module.exports = add
+module.exports = all

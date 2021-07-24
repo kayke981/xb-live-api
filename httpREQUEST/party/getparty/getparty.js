@@ -1,7 +1,7 @@
 const n = require('node-fetch');
 
 async function getparty() {
-		
+		return new Promise(async (res, rej) => {
 		return await n(`https://xbl.io/api/v2/party`, {
 			method: 'get',
 			headers: {
@@ -10,6 +10,7 @@ async function getparty() {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
+		}).then(r => r.json()).then(res).catch(rej)
 		})
 	}
 	

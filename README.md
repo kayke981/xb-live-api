@@ -19,7 +19,7 @@ let client = new XboxAPI({
   app_key: 'YOUR_APP_TOKEN',
   lang: 'en-us' //default is pt-br
 })
-client.account('xuid').then(r => r.json()).then(json => console.log(json))
+client.account('xuid').then(res => console.log(res))
 ```
 > NOTE: xuid is the xbox account id
 
@@ -35,7 +35,7 @@ let client = new XboxAPI({
 })
 
 let gamertag = 'kayke293'
-client.friend.search(gamertag).then(r => r.json()).then(json => console.log(json))
+client.friend.search(gamertag).then(res => console.log(res))
 ```
 > NOTE: id is hostid 
 
@@ -50,7 +50,7 @@ let client = new XboxAPI({
 	lang: 'en-us'//default is pt-br
 })
 
-client.account().then(r => r.json()).then(json => console.log(json))
+client.account().then(res => console.log(res))
 ```
 # How do you send a friend request? 
 
@@ -88,9 +88,11 @@ client.friend.add('xuid')
 
 `conversations.getmessage(xuid)` -> **get a certain conversation**
 
-`achieviments(xuid)` -> **get the user's achievements**
+`achiviements(xuid)` -> **get the user's achievements**
 
-`favoriteFriend(xuid)` -> **put one of your friends in the favorites list**
+`friend.favorite(xuid)` -> **put one of your friends in the favorites list**
+
+`friend.all()` -> **show all yours friends**
 
 `conversations.sendmessage(xuid, message)` -> **send a message**
 

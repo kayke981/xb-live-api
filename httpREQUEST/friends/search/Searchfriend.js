@@ -1,7 +1,7 @@
 const n = require('node-fetch');
 
 async function search() {
-	
+	return new Promise(async (res, rej) => {
 if (!string) throw new TypeError('Provide a gamertag');
 		return await n(`https://xbl.io/api/v2/friends/search?gt=${string}`, {
 			method: 'get',
@@ -11,6 +11,7 @@ if (!string) throw new TypeError('Provide a gamertag');
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
+	}).then(r => r.json()).then(res).catch(rej)
 	})
 	}
 	
