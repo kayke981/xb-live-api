@@ -1,6 +1,7 @@
 const n = require('node-fetch');
 
 async function precense(xuid) {
+
 		if(xuid) {
 			return await n(`https://xbl.io/api/v2/${xuid}/precense`, {
 			method: 'get',
@@ -10,7 +11,7 @@ async function precense(xuid) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+			})
 		} else {
 			return await n(`https://xbl.io/api/v2/precense`, {
 			method: 'get',
@@ -20,7 +21,7 @@ async function precense(xuid) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+			})
 		}
 	}
 module.exports = precense;

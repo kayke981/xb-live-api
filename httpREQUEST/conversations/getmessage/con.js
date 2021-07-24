@@ -2,6 +2,7 @@
 	
 	
 	async function getmessage(xuid) {
+		
 		if(xuid) {
 			return await n(`https://xbl.io/api/v2/conversations/${xuid}`, {
 			method: 'get',
@@ -11,7 +12,7 @@
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+			})
 		} else {
 			return await n(`https://xbl.io/api/v2/conversations`, {
 			method: 'get',
@@ -21,8 +22,8 @@
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
-		}
+		})
+	}
 	}
 
 	module.exports = getmessage;

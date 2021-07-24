@@ -1,7 +1,6 @@
 const n = require('node-fetch');
 
 async function sendinvite(id, xuid, name) {
-
 	if(!id) throw new TypeError('Provide a sessionid, If using this in your application first call "party.getparty()" to get a list of sessions (usually only 1) then call this endpoint to invite players to join the session. SessionName below is a value returned from party.getparty()')
 	
 	if(!xuid) throw new TypeError('Provide a xuid')
@@ -15,8 +14,7 @@ async function sendinvite(id, xuid, name) {
         'Accept': ['application/json', 'application/xml'],
         'Accept-Language': String(process.lang),
    }
-	});
-
+})
 }
 
 module.exports = sendinvite

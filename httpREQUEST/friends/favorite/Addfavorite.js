@@ -11,8 +11,7 @@ const n = require('node-fetch')
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang),
 			},
-
-		});
+		})
 	}
 	
 module.exports = favorite

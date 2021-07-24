@@ -1,6 +1,7 @@
 const n = require('node-fetch');
 
 async function achieviments(xuid) {
+		
 		if(!xuid) throw new TypeError('Provide a xuid')
 		
 		return await n(`https://xbl.io/api/v2/achieviments/player/${xuid}`, {
@@ -11,7 +12,7 @@ async function achieviments(xuid) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+		})
 	}
 	
 	module.exports = achieviments;

@@ -1,6 +1,7 @@
 const n = require('node-fetch')
 
 async function sendmessage(number, string) {
+
 	if(!number && string) throw new TypeError('Provide xuid and a message')
 return await n('https://xbl.io/api/v2/conversations', {
    method: 'post',
@@ -11,7 +12,7 @@ return await n('https://xbl.io/api/v2/conversations', {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-});
+})
 }
 
 module.exports = sendmessage;

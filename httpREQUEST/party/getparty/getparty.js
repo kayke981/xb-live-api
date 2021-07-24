@@ -10,7 +10,7 @@ async function getparty() {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+		})
 	}
 	
 

@@ -17,12 +17,11 @@ class XboxAPI {
 	
 		if(!this.api_key) throw new TypeError('Provide an api key');
 		if(!this.app_key) throw new TypeError('Provide an app key');
-		
 		let data = process.env;
 		
-	data.api_key = this.api_key;
-	data.app_key = this.app_key;
-	data.lang = this.lang;
+		data.api_token = this.api_key;
+		data.app_token = this.app_key;
+		data.lang = this.lang;
 		
 	
 this.friend = friend;

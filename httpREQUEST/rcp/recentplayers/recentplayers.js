@@ -1,6 +1,7 @@
 const n = require('node-fetch');
 
 	async function recentplayers() {
+		
 		return await n(`https://xbl.io/api/v2/recent-players`, {
 			method: 'get',
 			headers: {
@@ -9,7 +10,7 @@ const n = require('node-fetch');
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			},
-		});
+		})
 	}
 	
 	module.exports = recentplayers;

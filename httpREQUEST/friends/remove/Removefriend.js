@@ -1,6 +1,7 @@
 const n = require('node-fetch');
 
 async function remove(xuid) {
+	
 	if(!xuid) throw new TypeError('Provide a xuid')
 	
 	return await n(`https://xbl.io/api/v2/friends/remove/${xuid}`, {
@@ -11,7 +12,8 @@ async function remove(xuid) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-		});
+
+	})
 }
 
 module.exports = remove

@@ -1,6 +1,7 @@
 const n = require('node-fetch');
 
 async function account(number) {
+	
 		if (number) {
 		return await n(`https://xbl.io/api/v2/account/${number}`, {
 				headers: {
@@ -9,7 +10,7 @@ async function account(number) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-		});
+		})
 		} else {
 			return await n(`https://xbl.io/api/v2/account/`, {
 				headers: {
@@ -18,7 +19,7 @@ async function account(number) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			});
+			})
 		}
 }
 
