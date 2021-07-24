@@ -5,6 +5,8 @@ const recentplayers = require('../httpREQUEST/rcp/recentplayers/recentplayers.js
 const account = require('../httpREQUEST/account/account/acc.js');
 const ach = require('../httpREQUEST/achieviments/achiviements/ach.js');
 const conversations = require('../httpREQUEST/conversations/con.js');
+
+
 class XboxAPI {
 	constructor(options = {}) {
 		
@@ -14,6 +16,7 @@ class XboxAPI {
 		this.api_key = options.api_key,
 		this.app_key = options.app_key,
 		this.lang = options.lang || 'pt-br';
+		this._used = 0;
 	
 		if(!this.api_key) throw new TypeError('Provide an api key');
 		if(!this.app_key) throw new TypeError('Provide an app key');
@@ -22,8 +25,7 @@ class XboxAPI {
 		data.api_key = this.api_key;
 		data.app_key = this.app_key;
 		data.lang = this.lang;
-		
-	
+	if(this._used === 500) throw new Error('Wait 1 hour to use 500 request again.')
 this.friend = friend;
 this.party = party;
 this.precense = precense;
@@ -32,7 +34,10 @@ this.account = account;
 this.achiviements = ach;
 this.conversations = conversations;
 	
-}
+	this._used += 1;
+	setInterval(() => this._used = 0, 3600000)
+		
+	}
 }
 
 module.exports = XboxAPI;

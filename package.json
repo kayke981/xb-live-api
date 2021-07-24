@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/kayke981/xb-live-api#readme",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "erlpack": "^0.1.3",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.5.3"
   }
 }

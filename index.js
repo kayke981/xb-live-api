@@ -1,3 +1,4 @@
 module.exports = {
-	XboxAPI: require('./XboxAPI/index.js')
+	XboxAPI: require('./XboxAPI/index.js'),
+	WebSocket: require('./WebSocket.js')
 }

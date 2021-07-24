@@ -19,7 +19,7 @@ async function account(number) {
 				"Accept": ['application/json', 'application/xml'],
 				'Accept-Language': String(process.env.lang)
 			}
-			}).then(r => r.json()).then(res).catch(rej)
+			}).then(r => r.json()).then(res).catch(rej.message)
 		}
 	})
 }
