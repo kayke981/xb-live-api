@@ -16,7 +16,6 @@ class XboxAPI {
 		this.api_key = options.api_key,
 		this.app_key = options.app_key,
 		this.lang = options.lang || 'pt-br';
-		this._used = 0;
 	
 		if(!this.api_key) throw new TypeError('Provide an api key');
 		if(!this.app_key) throw new TypeError('Provide an app key');
@@ -34,9 +33,6 @@ this.account = account;
 this.achiviements = ach;
 this.conversations = conversations;
 	
-	this._used += 1;
-	setInterval(() => this._used = 0, 3600000)
-		
 	}
 }
 
