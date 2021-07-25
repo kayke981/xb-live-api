@@ -24,7 +24,7 @@ class XboxAPI {
 		data.api_key = this.api_key;
 		data.app_key = this.app_key;
 		data.lang = this.lang;
-	if(this._used === 500) throw new Error('Wait 1 hour to use 500 request again.')
+
 this.friend = friend;
 this.party = party;
 this.precense = precense;
