@@ -1,6 +1,6 @@
 {
   "name": "xb-live-api",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Easy and simple API for xbox.",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/kayke981/xb-live-api#readme",
   "dependencies": {
-    "erlpack": "^0.1.3",
-    "node-fetch": "^2.6.1",
-    "ws": "^7.5.3"
+    "node": "^16.9.1",
+    "node-fetch": "^2.6.1"
   }
 }
