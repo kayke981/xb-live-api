@@ -44,7 +44,6 @@ client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language')// the default language is
 let gamertag = 'kayke293'
 client.friend.search(gamertag).then(r => console.log(r))
 ```
-> NOTE: id is hostid 
 
 return: 
 ```
@@ -59,6 +58,8 @@ profileUsers: [
   ]
 }
 ```
+> NOTE: id is hostid
+
 # How do you get the account id?
 
 ```js
