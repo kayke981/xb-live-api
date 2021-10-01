@@ -1,9 +1,9 @@
 # Xbox-Live-API
 Easy and simple API for xbox.
 
-# How to get API token and App token 
+# How to get the API token and app token 
 
-go to https://xbl.io/ and log in to some account on Xbox, then press menu, profile and go down a little, and api key will appear, and press create, then go up a little and go to apps then click new app, put anything, in Public Key put anything, like: 1772683(**app key isn't necessary, you can put nothing**)
+Go to https://xbl.io/ and log in to your Xbox account. Go to your profile page and create an API key by pressing the Create button in the API Keys area.
 
 # Support server
 
@@ -95,7 +95,7 @@ client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language')// the default language is
 client.friend.add('xuid')
 ```
 
-## Functions
+## Methods
 
 `account()` -> **get your information**
 
@@ -107,17 +107,17 @@ client.friend.add('xuid')
 
 `friend.search(gamertag)` -> **get a user's information by the gamertag**
 
-`recentplayers()` -> **show recent players**
+`recentPlayers()` -> **show recent players**
 
-`precense()` -> **get friend's precense**
+`presence()` -> **get your presence**
 
-`precense(xuid)` -> **get friend's precense**
+`presence(xuid)` -> **get someone's presence**
 
 `message.get()` -> **get message requests**
 
-`message.get(xuid)` -> **get a certain conversation**
+`message.get(xuid)` -> **get a conversation**
 
-`achiviements(xuid)` -> **get the user's achievements**
+`achievements(xuid)` -> **get the user achievements**
 
 `friend.favorite(xuid)` -> **put one of your friends in the favorites list**
 
