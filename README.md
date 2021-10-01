@@ -47,7 +47,7 @@ let gamertag = 'kayke293'
 client.friend.search(gamertag).then(r => console.log(r))
 ```
 
-return: 
+Returns: 
 ```
 {
 profileUsers: [
