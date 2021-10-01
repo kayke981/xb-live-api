@@ -9,16 +9,16 @@ Go to https://xbl.io/ and log in to your Xbox account. Go to your profile page a
 
 https://discord.gg/jyfzwvadBy
 
-# How it works? 
+# Getting your own data 
 
 ```js
 const {Xbox} = require('xb-live-api');
 
 let client = new Xbox()
-client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language')// the default language is pt-br
+client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language') // The default language is pt-br
 client.account().then(r => console.log(r))
 ```
-return: 
+Returns: 
 ```
 {
 profileUsers: [
@@ -31,15 +31,17 @@ profileUsers: [
   ]
 }
 ```
-> NOTE: xuid is the xbox account id
+> NOTE: XUID is the xbox account ID
 
-# How do you get the account id?
+# Examples
+
+## Getting account ID by gamertag
 
 ```js
 const {Xbox} = require('xb-live-api');
 
 let client = new Xbox()
-client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language')// the default language is pt-br
+client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language') // The default language is pt-br
 
 let gamertag = 'kayke293'
 client.friend.search(gamertag).then(r => console.log(r))
@@ -58,33 +60,9 @@ profileUsers: [
   ]
 }
 ```
-> NOTE: id is hostid
+> NOTE: ID is hostId
 
-# How do you get the account id?
-
-```js
-const {Xbox} = require('xb-live-api');
-
-let client = new Xbox()
-client.run('YOUR_API_KEY', 'YOUR_APP_KEY', 'language')// the default language is pt-br
-
-client.account().then(r => console.log(r))
-```
-
-return: 
-```
-{
-profileUsers: [
- {
-  id: '2533274947420660',
-  hostId: '2533274947420660',
-  settings: [Array],
-  isSponsoredUser: false
-   }
-  ]
-}
-```
-# How do you send a friend request? 
+## Sending a friend request 
 
 ```js
 const {Xbox} = require('xb-live-api');
@@ -129,4 +107,4 @@ client.friend.add('xuid')
 
 `party.get()` -> **get a party**
 
-`party.invite(sesionid, xuid, name)` -> **send invite party, If using this in your application first call "party.get()" to get a list of sessions (usually only 1) then call this endpoint to invite players to join the session. SessionName below is a value returned from party.get()**
+`party.invite(sesionid, xuid, name)` -> **send a party invite. If using this in your application first call "party.get()" to get a list of sessions (usually only 1), then call this endpoint to invite players to join the session. SessionName below is a value returned from party.get()**
