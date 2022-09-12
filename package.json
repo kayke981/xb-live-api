@@ -1,0 +1,19 @@
+{
+  "name": "xbox-api",
+  "version": "0.0.1",
+  "description": "A wrapper of xbl.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node dist/"
+  },
+  "keywords": [
+    "xbox",
+    "xbox",
+    "live"
+  ],
+  "author": "kayake .",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.2"
+  }
+}
