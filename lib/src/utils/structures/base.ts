@@ -5,7 +5,7 @@ class Base {
     private profileUsers: ProfileUsersData = {}
     constructor(data: any) {
         this.data = data
-        this._path(this.data)
+        this._update(this.data)
     }
 
     _update(data: any) {
