@@ -8,7 +8,7 @@ class Base {
         this._path(this.data)
     }
 
-    _path(data: any) {
+    _update(data: any) {
         let r = data[0]
         if('id' in r) {
             this.profileUsers.id = r.id
