@@ -13,7 +13,7 @@ class Xbox {
     * @param {headers} headers for requests
     * @private
     *
-    * @params {ClientOptions} options for the client
+    * @param {ClientOptions} options for the client
      */
     constructor(api_token: string, options: ClientOptions) {
         
@@ -21,7 +21,7 @@ class Xbox {
         * @type {api_token}
         * @type {options} client options
          */
-        
+
        this.options = options
        this.api_token = api_token
        this.set_env() 
