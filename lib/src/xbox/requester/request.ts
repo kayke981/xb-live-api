@@ -1,6 +1,6 @@
 import { RequesterOptions } from '../../utils/structures/interface/request';
 import constants from '../../utils/const'
-import fetch from 'node-fetch'
+import axios from 'axios'
 
 class Requester {
     public header: any = {};
@@ -19,14 +19,10 @@ class Requester {
 
         this.header = options.headers || {}
 
-        this.header["X-Authorization"] = `["${process.env.api_key}", "${process.env.app_token}"]`
+        this.header["X-Authorization"] = process.env.api_token
         this.header["Accept"] = `["application/json", "application/xml"]`
-        this.header["X-Contract"] = "100"
+        // this.header["X-Contract"] = "100"
         this.header["Accept-Language"] = options.language || 'en-US'
-
-        this.header.cookie = options.headers?.cookie
-        this.header.user_agent = options.headers?.user_agent
-
         return this
     }
 
@@ -34,19 +30,15 @@ class Requester {
     * @returns {object}
      */
 
-    async request(method: string, uri: string, data?: string) {
-        let res = await fetch(constants+uri, {
+    async request(method: string, uri: string, data?: any) {
+        console.log(this.header)
+        let res = await axios(constants.api+uri, {
             method: method,
             headers: this.header,
-            body: data || ""
-        })
-        let json;
-        try {
-            json = res.json()
-        } catch {
-            throw new Error(`[${res.status}] Can't load JSON. Error: ${res.statusText}`)
-        }
-
+            data: data || {}
+        }).then(response => { return response })
+        if(res.data.status === false) throw new Error(res.data.message|| res.status)
+        let json = res.data
         return json
     }
 

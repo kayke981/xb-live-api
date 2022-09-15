@@ -14,8 +14,12 @@ class API {
     */
 
     sendMessage(message: string, id: string) {
-        let res = this.rest.request('POST', constants.uri.send.message, `"Payload: {\"xuid\": \"${id}\", \"message\": \"${message}\"}"`)
-        if(res.ok) return true
+        let payload = {
+            xuid: `${id}`,
+            message: `${message}`
+        }
+        let res = this.rest.request('POST', constants.uri.send.message, payload)
+        if(res.status === 200) return true
         else return false
     }
 

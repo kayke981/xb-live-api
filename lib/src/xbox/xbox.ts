@@ -4,15 +4,16 @@ import UserManager from "../utils/manager/user";
 class Xbox {
     public language: string = ''
     private options: any = {}
-    private api_token: string = ''
     private headers: any = {}
     public user: any = {}
+    public users: any = {}
     /**
     * @param {language} language of datas
     * @public
     * @param {options} options
     * @param {api_token} api_token token
     * @param {headers} headers for requests
+    * @param {users} users
     * @param {user} user
     * @private
     *
@@ -26,17 +27,16 @@ class Xbox {
          */
 
        this.options = options
-       this.api_token = api_token
-       this.user = new UserManager()
+       process.env.api_token = api_token
+       this.user = new UserManager().fetch()
+       this.users = new UserManager()
        this.set_env() 
         return this
     }
 
     set_env() {
         let env = process.env
-        env.api_key = this.api_token
-        env.app_key = this.options.app_token
-        this.api_token = ''
+        env.app_key = this.options.app_token || ""
         this.options = {
             language: this.options.language,
             headers: this.headers

@@ -1,5 +1,5 @@
 import Requester from "../../xbox/requester/request";
-import BaseChat from "../structures/base/chat";
+import BaseUser from "../structures/base/user";
 import constants from "../const";
 
 class UserManager {
@@ -7,7 +7,7 @@ class UserManager {
     private resolverUser: any = {}
     constructor() {
         this.rest = new Requester({})
-        this.resolverUser = BaseChat
+        this.resolverUser = BaseUser
     }
 
     /**
@@ -18,9 +18,10 @@ class UserManager {
     * <User>.fetch('2535413400000000')
     */
 
-    fetch(id: string) {
-        let res = this.rest.request('GET', constants.uri.find.user+id)
-        let user = this.resolverUser(res)
+    async fetch(id?: string) {
+        id? id = id : id = ''
+        let res = await this.rest.request('GET', constants.uri.find.user+id)
+        let user = new this.resolverUser(res)
         return user
     }
 }

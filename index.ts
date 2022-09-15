@@ -1,5 +1,9 @@
 import Xbox from './lib/src/xbox/xbox';
 
-const client = new Xbox('8gk8o880c8w0os440s4scwgkswwcg084gwc', {language: 'pt-BR'})
+const client = new Xbox('', {language: 'pt-BR'})
 
-console.log(client)
+async function a() {
+   let b = await client.user
+   console.log(b)
+}
+a()
