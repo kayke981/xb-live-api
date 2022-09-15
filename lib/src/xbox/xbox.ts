@@ -1,21 +1,24 @@
-import { ClientOptions } from "../utils/structures/interface/client"
+import { ClientOptions } from "../utils/structures/interface/client";
+import UserManager from "../utils/manager/user";
 
 class Xbox {
     public language: string = ''
     private options: any = {}
     private api_token: string = ''
     private headers: any = {}
+    public user: any = {}
     /**
-    * @param {language} languagae of datas
+    * @param {language} language of datas
     * @public
     * @param {options} options
-    * @param {api_token} API token
+    * @param {api_token} api_token token
     * @param {headers} headers for requests
+    * @param {user} user
     * @private
     *
-    * @param {ClientOptions} options for the client
+    * @param {ClientOptions} ClientOptions for the client
      */
-    constructor(api_token: string, options: ClientOptions) {
+    constructor(api_token: string, options?: ClientOptions) {
         
         /**
         * @type {api_token}
@@ -24,6 +27,7 @@ class Xbox {
 
        this.options = options
        this.api_token = api_token
+       this.user = new UserManager()
        this.set_env() 
         return this
     }

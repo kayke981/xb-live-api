@@ -4,7 +4,7 @@
   "description": "A wrapper of xbl.io",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && node dist/"
+    "test": "tsc && node dist/lib/src/xbox/xbox.js"
   },
   "keywords": [
     "xbox",
@@ -13,6 +13,10 @@
   "author": "kayake .",
   "license": "Apache-2.0",
   "dependencies": {
-    "@types/node-fetch": "^2.6.2"
+    "@types/node": "^18.7.18"
+  },
+  "devDependencies": {
+    "node-fetch": "^3.2.10",
+    "tslib": "^2.4.0"
   }
 }
