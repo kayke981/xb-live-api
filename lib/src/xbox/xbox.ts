@@ -2,20 +2,12 @@ import { ClientOptions } from "../utils/structures/interface/client";
 import UserManager from "../utils/manager/user";
 
 class Xbox {
-    public language: string = ''
-    private options: any = {}
-    private headers: any = {}
-    public user: any = {}
+    public language: string = 'en-US'
     public users: any = {}
     /**
     * @param {language} language of datas
-    * @public
-    * @param {options} options
-    * @param {api_token} api_token token
-    * @param {headers} headers for requests
     * @param {users} users
-    * @param {user} user
-    * @private
+    * @public
     *
     * @param {ClientOptions} ClientOptions for the client
      */
@@ -26,20 +18,18 @@ class Xbox {
         * @type {options} client options
          */
 
-       this.options = options
        process.env.api_token = api_token
-       this.user = new UserManager().fetch()
        this.users = new UserManager()
-       this.set_env() 
+       this.set_env(options) 
         return this
     }
 
-    set_env() {
+    set_env(options?: any) {
         let env = process.env
-        env.app_key = this.options.app_token || ""
-        this.options = {
-            language: this.options.language,
-            headers: this.headers
+        env.app_key = options.app_token || ""
+        options = {
+            language: options.language,
+            headers: options.headers
         }
     }
 }
