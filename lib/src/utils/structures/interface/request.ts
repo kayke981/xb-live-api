@@ -4,5 +4,7 @@ export interface HeadersOptions {
 }
 
 export interface RequesterOptions {
-    headers: HeadersOptions
+    headers?: HeadersOptions,
+    language?: string
+
 }

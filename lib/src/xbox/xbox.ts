@@ -5,7 +5,7 @@ class Xbox {
     private options: any = {}
     private api_token: string = ''
     private headers: any = {}
-    /*
+    /**
     * @param {language} languagae of datas
     * @public
     * @param {options} options
@@ -14,15 +14,17 @@ class Xbox {
     * @private
     *
     * @params {ClientOptions} options for the client
-    */
+     */
     constructor(api_token: string, options: ClientOptions) {
-        /*
+        
+        /**
         * @type {api_token}
         * @type {options} client options
-        */
+         */
+        
        this.options = options
        this.api_token = api_token
-       this.set_env()
+       this.set_env() 
         return this
     }
 
